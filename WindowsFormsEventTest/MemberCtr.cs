@@ -8,7 +8,7 @@ namespace WindowsFormsEventTest
 {
     public class MemberCtr
     {
-        public event EventHandler<MemberNameChangedArgs> MemberNameChanged;
+        //public event EventHandler<MemberNameChangedArgs> MemberNameChanged;
 
         public Member CreateMember(string name)
         {
@@ -16,10 +16,10 @@ namespace WindowsFormsEventTest
             //Observer obs = new Observer();
             //this.MemberNameChanged += obs.UpdateMemberName;
 
-            if (MemberNameChanged != null)
-            {
-                this.MemberNameChanged(this, new MemberNameChangedArgs(name));
-            }
+            //if (MemberNameChanged != null)
+            //{
+            //    this.MemberNameChanged(this, new MemberNameChangedArgs(name));
+            //}
             return new Member() { Name = name };
         }
     }

@@ -14,7 +14,7 @@ namespace WindowsFormsEventTest
     {
         private MemberCtr memberCtr;
 
-        //public event EventHandler<MemberNameChangedArgs> MemberNameChanged;
+        public event EventHandler<MemberNameChangedArgs> MemberNameChanged;
 
 
         public Notifier(MemberCtr memberCtr)
@@ -27,18 +27,19 @@ namespace WindowsFormsEventTest
         {
            
 
-            Observer obs = new Observer(memberCtr);
-            memberCtr.MemberNameChanged += obs.UpdateMemberName;
+            //Observer obs = new Observer(memberCtr);
+            
+            //MemberNameChanged += obs.UpdateMemberName;
 
             Member m = new MemberCtr().CreateMember(txtName.Text);
 
-            //if (this.MemberNameChanged != null)
-            //{
-            //    this.MemberNameChanged(this, new MemberNameChangedArgs(this.txtName.Text));
-            //}
+            if (this.MemberNameChanged != null)
+            {
+                this.MemberNameChanged(this, new MemberNameChangedArgs(this.txtName.Text));
+            }
            
            
-            obs.Show();
+            //obs.Show();
         }
     }
 }
